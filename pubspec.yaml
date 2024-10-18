@@ -37,6 +37,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
+  persistent_bottom_nav_bar: ^6.2.1
 
 dev_dependencies:
   flutter_lints: ^4.0.0
@@ -56,6 +57,7 @@ flutter:
   assets:
     - assets/images/
     - assets/svg/
+    - assets/svg/icons/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

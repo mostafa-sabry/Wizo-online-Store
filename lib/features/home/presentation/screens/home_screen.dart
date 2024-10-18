@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_store/core/helpers/spacing.dart';
+import 'package:online_store/features/home/presentation/widget/grid_view.dart';
 import '../widget/banner_widget.dart';
 import '../widget/categoris_widget.dart';
 import '../widget/category_name_widget.dart';
@@ -21,12 +22,19 @@ class HomeScreen extends StatelessWidget {
               verticalSpace(20),
               const MyTextFormFiled(),
               verticalSpace(20),
-              const CateoryNameHeder(),
+              const CateoryNameHeder(
+                title: 'Categories',
+              ),
               verticalSpace(15),
               const CategorisWidgetScroling(),
               verticalSpace(20),
               const BannersWidget(),
               verticalSpace(20),
+              const CateoryNameHeder(
+                title: 'Featured products',
+              ),
+              verticalSpace(15),
+              const GridViewWidget()
             ],
           ),
         ),

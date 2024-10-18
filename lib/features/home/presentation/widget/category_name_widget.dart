@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../../core/themes/my_fonts.dart';
 
 class CateoryNameHeder extends StatelessWidget {
+  final String title;
+
   const CateoryNameHeder({
     super.key,
+    required this.title,
   });
 
   @override
@@ -13,7 +16,7 @@ class CateoryNameHeder extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Categories',
+          title,
           style: MyFontsHelper.font18blck,
         ),
         InkWell(

@@ -8,5 +8,10 @@ class EndPoints {
   static String logout = "logout";
 
   static String profile = "profile";
+
   static String banners = "banners";
+
+  static String categories = "categories";
+
+  static String home = "home";
 }

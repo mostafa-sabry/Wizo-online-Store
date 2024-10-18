@@ -39,40 +39,40 @@ class _BottomNavBarState extends State<BottomNavBar> {
         PersistentBottomNavBarItem(
           icon: SvgPicture.asset(
             'assets/svg/icons/home.svg',
-            height: 27.h,
-            width: 27.w,
+            height: 35.h,
+            width: 35.w,
           ),
         ),
         PersistentBottomNavBarItem(
           icon: SvgPicture.asset(
             'assets/svg/icons/favourite.svg',
-            height: 27.h,
-            width: 27.w,
+            height: 35.h,
+            width: 35.w,
           ),
         ),
         PersistentBottomNavBarItem(
           icon: SvgPicture.asset(
             'assets/svg/icons/bag.svg',
-            height: 27.h,
-            width: 27.w,
+            height: 35.h,
+            width: 35.w,
           ),
         ),
         PersistentBottomNavBarItem(
           icon: SvgPicture.asset(
             'assets/svg/icons/setting.svg',
-            height: 27.h,
-            width: 27.w,
+            height: 35.h,
+            width: 35.w,
           ),
         ),
         PersistentBottomNavBarItem(
           icon: SvgPicture.asset(
             'assets/svg/icons/message.svg',
-            height: 27.h,
-            width: 27.w,
+            height: 35.h,
+            width: 35.w,
           ),
         ),
       ],
-      navBarStyle: NavBarStyle.style2, // Optional: Pick your preferred style
+      navBarStyle: NavBarStyle.style12, // Optional: Pick your preferred style
     );
   }
 }

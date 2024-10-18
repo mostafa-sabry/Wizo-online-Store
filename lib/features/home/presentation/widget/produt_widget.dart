@@ -14,7 +14,7 @@ class ProductWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey.shade300,
+        color: Colors.grey.shade200,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -25,7 +25,8 @@ class ProductWidget extends StatelessWidget {
             width: double.infinity,
             decoration: const BoxDecoration(
               color: Colors.white,
-              image: DecorationImage(image: AssetImage('assets/images/52.png')),
+              image:
+                  DecorationImage(image: AssetImage('assets/images/phone.png')),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10),
@@ -33,9 +34,12 @@ class ProductWidget extends StatelessWidget {
             ),
           ),
           verticalSpace(5),
-          Text(
-            'Fitbit Smartwatch',
-            style: MyFontsHelper.font12black,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              "Smartphone",
+              style: MyFontsHelper.font12black,
+            ),
           ),
           verticalSpace(10),
           Padding(

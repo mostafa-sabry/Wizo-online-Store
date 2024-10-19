@@ -10,7 +10,7 @@ class ProductsCubit extends Cubit<ProductsState> {
 
   final GetProductRepositories getProductRepositories;
 
-  List<GetProductModel> products = [];
+  List<CategoryModel> products = [];
 
   getProducts() async {
     emit(ProductsLoading());

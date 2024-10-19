@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/core/helpers/spacing.dart';
 import 'package:online_store/core/networking/api/dio_consumer.dart';
-import 'package:online_store/features/home/presentation/logic/cubit/products_cubit.dart';
+import 'package:online_store/features/home/presentation/logic/banners_cubit/banner_cubit.dart';
+import 'package:online_store/features/home/presentation/logic/cubit_category/products_cubit.dart';
+import 'package:online_store/features/home/presentation/logic/repositories/get_banner_repositories.dart';
 import 'package:online_store/features/home/presentation/logic/repositories/get_product_repositories.dart';
 import 'package:online_store/features/home/presentation/widget/grid_view.dart';
 import '../widget/banner_widget.dart';
@@ -17,10 +19,19 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          ProductsCubit(GetProductRepositories(api: DioConsumer(dio: Dio())))
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ProductsCubit(
+              GetProductRepositories(api: DioConsumer(dio: Dio())))
             ..getProducts(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              BannerCubit(GetBannerRepositories(api: DioConsumer(dio: Dio())))
+                ..getBanner(),
+        ),
+      ],
       child: Scaffold(
         body: SafeArea(
           child: Padding(

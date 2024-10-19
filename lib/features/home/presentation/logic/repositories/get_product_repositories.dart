@@ -9,26 +9,32 @@ class GetProductRepositories {
 
   GetProductRepositories({required this.api});
 
-  Future<Either<String, List<GetProductModel>>> getProducts() async {
+  Future<Either<String, List<CategoryModel>>> getProducts() async {
     try {
       final response = await api.get(EndPoints.categories);
-      print(response); // Print the response for debugging
+      List<CategoryModel> category = [];
+      CategoryModel categoryModel;
 
-      // هنا نتحقق من نوع البيانات قبل التحويل
-      if (response is Map<String, dynamic>) {
-        if (response['data'] != null && response['data'] is List) {
-          List<GetProductModel> products = (response['data'] as List)
-              .map((product) => GetProductModel.fromJson(product))
-              .toList();
-          return Right(products);
-        } else {
-          return const Left('No products found');
-        }
-      } else {
-        return const Left('Unexpected data format');
+      for (var item in response.data!.categories!) {
+        categoryModel = CategoryModel.fromJson(item);
+        category.add(categoryModel);
       }
+      return Right(response.data!.categories!);
     } on Exception catch (e) {
       return Left(e.toString());
     }
   }
 }
+
+
+  // Future<List<BooksModel>> getBooks() async {
+  //   final data = await ApiService()
+  //       .get(apiUrl: 'https://api.codingarabic.online/api/books');
+  //   List<BooksModel> books = [];
+  //   BooksModel booksModel;
+
+  //   for (var item in data['data']) {
+  //     booksModel = BooksModel.fromJson(item);
+  //     books.add(booksModel);
+  //   }
+  //   return books;

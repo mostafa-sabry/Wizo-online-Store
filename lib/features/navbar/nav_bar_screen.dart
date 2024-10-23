@@ -72,7 +72,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
         ),
       ],
-      navBarStyle: NavBarStyle.style19, // Optional: Pick your preferred style
+      navBarStyle: NavBarStyle.style5, // Optional: Pick your preferred style
     );
   }
 }

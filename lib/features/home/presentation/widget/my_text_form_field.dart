@@ -8,7 +8,7 @@ class MyTextFormFiled extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
+    return TextField(
       decoration: const InputDecoration(
         hintText: 'Search',
         prefixIcon: Icon(

@@ -1,68 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:online_store/core/helpers/spacing.dart';
 
 import '../../../../core/themes/my_fonts.dart';
+import '../../../details/presntation/screens/details_screen.dart';
+import '../../data/model/get_categories_response_model/category.dart';
 
-class ProductWidget extends StatelessWidget {
-  const ProductWidget({
+class CategorisWidget extends StatelessWidget {
+  final Category category;
+  const CategorisWidget({
     super.key,
+    required this.category,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 102.h,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              image:
-                  DecorationImage(image: AssetImage('assets/images/phone.png')),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10),
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CategoryDetailsScreen(
+              category: category,
+            ),
+          ),
+        );
+      },
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 10.w),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          image: DecorationImage(
+            image: NetworkImage(
+              category.image ??
+                  "https://images.pexels.com/photos/6471779/pexels-photo-6471779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            ),
+          ),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            SizedBox(
+              child: Text(
+                category.name ?? "",
+                style: MyFontsHelper.font20black,
               ),
             ),
-          ),
-          verticalSpace(5),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
-              "Smartphone",
-              style: MyFontsHelper.font12black,
-            ),
-          ),
-          verticalSpace(10),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  '\$ 120.00',
-                  style: MyFontsHelper.font18blck,
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(
-                    "assets/images/add_cart.svg",
-                    height: 30.h,
-                    width: 30.w,
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

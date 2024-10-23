@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:online_store/core/networking/api/api_consumer.dart';
-import '../../../../../core/networking/api/end_points.dart';
+import '../../../../core/networking/api/end_points.dart';
 
 class GetBannerRepositories {
   final ApiConsumer api;

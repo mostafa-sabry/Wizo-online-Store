@@ -8,4 +8,5 @@ class MyColors {
   static Color orange = const Color(0xFFFF8037).withOpacity(0.7);
   static Color orange2 = const Color(0xFFFFC887).withOpacity(0.7);
   static Color gray = Colors.grey;
+  static Color white = Colors.white;
 }
